@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createHashRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home.jsx'
 import Products from './pages/Products.jsx'
+import Cart from './components/Cart.jsx'
 
 const router = createHashRouter(
   [
@@ -14,11 +15,15 @@ const router = createHashRouter(
       children: [
         {
           index: true,
-          component: Home
+          Component: Home
         },
         {
           path: '/pages/products/:productId?',
           Component: Products,
+        },
+        {
+          path: '/components/cart/:cartId',
+          Component: Cart,
         }
       ]
     }

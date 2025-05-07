@@ -1,0 +1,49 @@
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #15ECFB 0%, #0C8C95 100%);
+
+}
+.logo{
+    color: #FFFF50;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-family: "Jacques Francois Shadow";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+        display: flex;
+        gap: 2rem;
+        padding: 1rem 2rem;
+    }
+    li{
+        list-style: none; 
+    }
+
+    .nav-link{
+        text-decoration: none;
+        color: black;
+    }
+
+}
+.cart-icon-wrapper{
+    background-color: transparent;
+
+}
+.shopping-cart{
+    img{
+        width: 2em;
+        margin-right: 1em;
+    }
+}
