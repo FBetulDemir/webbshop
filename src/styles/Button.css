@@ -1,0 +1,20 @@
+.blue-btn{
+    color: #000;
+    background-color: #15ECFB;
+    border: 5px solid #000000;
+    border-radius: 12px;
+    padding: 1em 1.5em;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    width: 260.035px;
+    height: 71px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
