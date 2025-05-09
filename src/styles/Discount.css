@@ -1,0 +1,32 @@
+.discount-wrapper{
+    display: flex;
+    position: relative;
+    gap: 2rem;
+    margin: 1em 3em;
+    img{
+        width: 50%;
+        height: auto;
+
+    }
+}
+
+.discount-text{
+    position: absolute;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.discount-text .left {
+    bottom: 11em;
+    left: 20%;
+}
+
+.discount-text .right{
+    bottom: 11em;
+    right: 20%;
+}

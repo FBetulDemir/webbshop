@@ -28,7 +28,16 @@
         padding: 1rem 2rem;
     }
     li{
-        list-style: none; 
+        list-style: none;
+        font-size: 22px;
+        :hover{
+            color: #141414;
+            border: 3px solid #161616;
+            border-radius: 5px;
+            background-color: #FFFF50;
+            padding: 0.5em 0.7em;
+            transition: all 0.3s ease-in-out;
+        } 
     }
 
     .nav-link{
