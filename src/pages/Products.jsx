@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../data/database.js';
 import { collection, getDocs } from 'firebase/firestore';
+import '../styles/Products.css';
+import SearchBox from '../components/SearchBox.jsx';
 
 const Products = () => {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filtered, setFiltered] = useState([]);
 
 
   useEffect(() => {
@@ -14,14 +17,8 @@ const Products = () => {
       try {
 
         setLoading(true);
-
-
         const productsCollectionRef = collection(db, 'products');
-
-
         const querySnapshot = await getDocs(productsCollectionRef);
-
-
         const productsList = querySnapshot.docs.map(doc => ({
           id: doc.id, 
           ...doc.data() 
@@ -29,6 +26,7 @@ const Products = () => {
         console.log(productsList)
 
         setProducts(productsList);
+        setFiltered(productsList)
         setError(null);
 
       } catch (err) {
@@ -60,17 +58,24 @@ const Products = () => {
 
 
   return (
-    <div>
-      <h1>Our Products</h1>
+    <div className='products-wrapper'>
+      <h1>Sommarleksaker</h1>
+      <p>Välkommen till LekSol – din sommarbutik online! Här hittar du ett brett utbud av roliga, färgglada leksaker för både små och stora barn. Perfekt för soliga dagar, strandbus och vattenlek!</p>
+      <SearchBox 
+        products= {products}
+        setFiltered={setFiltered}
+        filtered={filtered}
+      />
       <ul>
-        {products.map(product => (
-          <li key={product.id}>
+        {(filtered.length > 0 ? filtered : products).map(product => (
+          <li key={product.id} className='product-item'>
             {product.imageUrl && (
-              <img src={product.imageUrl} alt={product.name} style={{ width: '80px', height: 'auto' }} />
+              <img src={product.imageUrl} alt={product.name} className="product-image" />
             )}
-            <h2>{product.name}</h2> 
+            <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
+            <p>Price: {product.price} SEK</p>
+            <button className='blue-btn'>Lägg till</button>
           </li>
         ))}
       </ul>

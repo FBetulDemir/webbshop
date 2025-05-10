@@ -59,7 +59,7 @@ const HomePageBestsellers = () => {
 
 
   return (
-    <div>
+    <section>
       <h2>Bestsellers</h2>
       <ul>
         {bestsellers.map(product => (
@@ -73,7 +73,7 @@ const HomePageBestsellers = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

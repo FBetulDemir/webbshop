@@ -4,22 +4,25 @@ import '../styles/Discount.css';
 
 const Discount = () => {
     return (
-        <div className="discount-wrapper">
-            <div className="left-content">
-                <img src={imageLeft} alt="" />
-                <div className="discount-text left">
-                    <h2>15% rabatt på vattenlek med koden SPLASH15</h2>
-                    <p>Gäller alla vattenleksaker fram till 30 juni!</p>
+        <section className="discounts-section">
+            <h2>Aktuella Kampanjer</h2>
+            <div className="discount-grid">
+                <div className="discount-card">
+                    <img src={imageLeft} alt="Vattenlek" />
+                    <div className="discount-overlay left">
+                        <h3>15% rabatt på<br />vattenlek<br />med koden SPLASH15</h3>
+                        <p>Gäller alla vattenleksaker<br />fram till 30 juni!</p>
+                    </div>
+                </div>
+                <div className="discount-card">
+                    <img src={imageRight} alt="Sommarleksaker" />
+                    <div className="discount-overlay right">
+                        <h3>10% rabatt<br />med koden SOMMAR10</h3>
+                        <p>Gäller alla sommarleksaker<br />fram till 15 juni!</p>
+                    </div>
                 </div>
             </div>
-            <div className="right-content">
-                <img src={imageRight} alt="" />
-                <div className="discount-text right" >
-                    <h2>10% rabatt med koden SOMMAR10</h2>
-                    <p>Gäller alla sommarleksaker fram till 15 juni!</p>
-                </div>
-            </div>
-        </div>
+      </section>
     )
 }
 

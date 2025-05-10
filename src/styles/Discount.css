@@ -1,32 +1,71 @@
-.discount-wrapper{
+.discounts-section {
+    text-align: center;
+}
+  
+.discount-grid {
     display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin: 2em 0;
+}
+  
+.discount-card {
     position: relative;
-    gap: 2rem;
-    margin: 1em 3em;
-    img{
-        width: 50%;
-        height: auto;
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+  
+.discount-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+  
+.discount-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2em 1em;
+    color: white;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    display: flex;
+    flex-direction: column;
 
-    }
+}
+  
+.discount-overlay.right {
+    justify-content: flex-start;
+    text-align: right;
+    padding: 2em 1em;
 }
 
-.discount-text{
-    position: absolute;
+.discount-overlay.left {
+    justify-content: flex-start;
+    text-align: left;
+    padding: 2em 1em;
+}
+  
+.discount-overlay h3 {
     color: #FFF;
     font-family: Poppins;
-    font-size: 40px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
 }
-
-.discount-text .left {
-    bottom: 11em;
-    left: 20%;
+  
+  
+.discount-overlay p {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
-
-.discount-text .right{
-    bottom: 11em;
-    right: 20%;
-}
+  
