@@ -20,10 +20,10 @@ const fetchProducts = async () => {
 };
 
 const deleteProduct = async(productId, setProducts) => {
-  const productRef = doc(db, "products", productId); // Referens till dokumentet
+  const productRef = doc(db, "products", productId);
 
   try {
-    await deleteDoc(productRef) // Ta bort produktdokumentet
+    await deleteDoc(productRef)
     console.log("Dokument borttaget!")
   } catch (e) {
     console.error("Fel vid borttagning av dokument: ", e)
@@ -32,12 +32,27 @@ const deleteProduct = async(productId, setProducts) => {
     
 }
 
-const addProduct = async () => {
+const addProduct = async (productObject) => {
+          try {
+              const productsCollection = collection(db, 'products'); 
+      
+  
+
+  
+              const newProductRef = await addDoc(productsCollection, productObject);
+              const generatedId = newProductRef.id;
+              console.log('Product added with ID:', generatedId);
+              return newProductRef; 
+      
+          } catch (error) {
+              console.error('Fel vid att lägga ny produkt : ', error);
+              throw error; 
+          }
 
 }
 
 const editProduct = async (productId, updatedProduct, setProducts) => {
-  const productRef = doc(db, "products", productId); // Referens till dokumentet
+  const productRef = doc(db, "products", productId);
   
   try{
     await updateDoc(productRef, updatedProduct)

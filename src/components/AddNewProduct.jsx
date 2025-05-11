@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "../data/database.js";
 import productSchema from '../validation/productValidation.js';
+import { addProduct } from '../data/crud.js';
 
 
 
@@ -15,36 +16,24 @@ const AddNewProduct = () => {
     const [success, setSuccess] = useState('');
 
     async function handleAddProduct() {
-        try {
-            const productsCollection = collection(db, 'products'); 
-    
 
-            const productObject = {
-                name: productName, 
-                description: description, 
-                price: Number(price),
-                imageUrl: imageUrl,
-                isBestseller: false,
-            }
+        const productObject = {
+            name: productName, 
+            description: description, 
+            price: Number(price),
+            imageUrl: imageUrl,
+            isBestseller: false,
+        }
 
-            const { error } = productSchema.validate(productObject, { abortEarly: false });
+        addProduct(productObject)
 
-            if (error) {
-                const message = error.details.map((err) => err.message).join('\n');
-                console.log(`Formuläret innehåller fel:\n${message}`);
-                setError(message)
-                return;
-            }
-
-
-            const newProductRef = await addDoc(productsCollection, productObject);
-            const generatedId = newProductRef.id;
-            console.log('Product added with ID:', generatedId);
-            return newProductRef; 
-    
-        } catch (error) {
-            console.error('Fel vid att lägga ny produkt : ', error);
-            throw error; 
+        const { error } = productSchema.validate(productObject, { abortEarly: false });
+  
+        if (error) {
+            const message = error.details.map((err) => err.message).join('\n');
+            console.log(`Formuläret innehåller fel:\n${message}`);
+            setError(message)
+            return;
         }
     }
 

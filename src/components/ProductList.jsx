@@ -1,4 +1,3 @@
-// ProductList.jsx
 import React, { useEffect, useState } from "react";
 import { fetchProducts, deleteProduct } from "../data/crud.js";
 
