@@ -1,18 +1,16 @@
+// ProductList.jsx
 import React, { useEffect, useState } from "react";
-import { fetchProducts, editProduct, deleteProduct } from "../data/crud.js";
-import { useNavigate } from "react-router";
-import EditProduct from "./EditProduct.jsx";
+import { fetchProducts, deleteProduct } from "../data/crud.js";
 
-const ProductList = ({updatedProduct}) => {
-  const [products, setProducts] = useState({});
+const ProductList = ({ onSelectProduct }) => {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
 
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const productsList = await fetchProducts(setProducts);
+        const productsList = await fetchProducts();
         setProducts(productsList);
         setError(null);
       } catch (err) {
@@ -26,39 +24,27 @@ const ProductList = ({updatedProduct}) => {
     loadProducts();
   }, []);
 
-  if (loading) {
-    return <div>Loading products...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  if (loading) return <div>Loading products...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="product-list-wrapper">
-      <h2>Valj en product att redigera:</h2>
+      <h4>Välj en produkt att redigera:</h4>
       <ul>
         {products.map((product) => (
           <li key={product.id} className="product-item">
             <h3>{product.name}</h3>
             <p>{product.description}</p>
-            <p>Price: {product.price} SEK</p>
-            <button
-              className="blue-btn"
-              onClick={() => editProduct(product.id, updatedProduct)}
-            >
+            <p>Pris: {product.price} SEK</p>
+            <button className="blue-btn" onClick={() => onSelectProduct(product)}>
               Redigera
             </button>
-            <button
-              className="blue-btn"
-              onClick={() => deleteProduct(product.id)}
-            >
+            <button className="blue-btn" onClick={() => deleteProduct(product.id, setProducts)}>
               Ta bort
             </button>
           </li>
         ))}
       </ul>
-      {/* <EditProduct products={products} productId={products.id} productName={products.name} /> */}
     </div>
   );
 };

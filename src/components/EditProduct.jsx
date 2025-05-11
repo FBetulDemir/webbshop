@@ -3,80 +3,86 @@ import { useParams, useNavigate } from "react-router";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../data/database";
 import ProductList from "./ProductList";
-import { editProduct, fetchProducts } from "../data/crud";
+import { editProduct, fetchProducts } from "../data/crud.js";
 
 const EditProduct = ({products, productId, productName}) => {
 
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [productUpdatedName, setProductUpdatedName] = useState("");
+    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
+  
+    useEffect(() => {
+      if (selectedProduct) {
+        setProductUpdatedName(selectedProduct.name);
+        setDescription(selectedProduct.description);
+        setPrice(selectedProduct.price);
+        setImageUrl(selectedProduct.imageUrl);
+      }
+    }, [selectedProduct]);
 
-    const [productUpdatedName, setProductUpdatedName] = useState();
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-    const [updatedProduct, setUpdatedProduct] = useState({});
+    const handleSave = async (e) => {
+        e.preventDefault();
+    
+        const updated = {
+          name: productUpdatedName,
+          description,
+          price: Number(price),
+          imageUrl,
+          isBestseller: false,
+        };
+    
+        await editProduct(selectedProduct.id, updated, () => {});
+        setSelectedProduct(null);
+        fetchProducts();
+    };
+    
+  
 
-
-
-
- 
-  const handleSave = async (e) => {
-    if (isEditing){
-        console.log("updating now")
-        editProduct(productId)
-    }
-  };
-
-
-  return (
-    <div className="edit-product-wrapper">
-      <h2>Edit Product</h2>
-      <ProductList updatedProduct={updatedProduct}/>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
-      {isEditing ? (
-        <form onSubmit={handleSave}>
-        <label htmlFor="name">Product Name</label>
-        <input
-          type="text"
-          id="name"
-          value={productName}
-          onChange={(e) => setProductUpdatedName(e.target.value)}
-        />
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <label htmlFor="price">Price</label>
-        <input
-          type="number"
-          id="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <label htmlFor="imageUrl">Image URL</label>
-        <input
-          type="text"
-          id="imageUrl"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-        <button type="submit" className="blue-btn">
-          Save
-        </button>
-      </form>
-      ): (
-        <button className="blue-btn" onClick={() => setIsEditing(true)}>
-          Edit Product
-        </button>
-      )}
+    return (
+        <div className="edit-product-wrapper">
+          <h2>Redigera Produkt</h2>
+          <ProductList onSelectProduct={setSelectedProduct} />
       
-    </div>
-  );
+          {selectedProduct && (
+            <form onSubmit={handleSave}>
+              <label htmlFor="name">Produktnamn</label>
+              <input
+                type="text"
+                id="name"
+                value={productUpdatedName}
+                onChange={(e) => setProductUpdatedName(e.target.value)}
+              />
+              <label htmlFor="description">Beskrivning</label>
+              <input
+                type="text"
+                id="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <label htmlFor="price">Pris</label>
+              <input
+                type="number"
+                id="price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+              <label htmlFor="imageUrl">Bildlänk</label>
+              <input
+                type="text"
+                id="imageUrl"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+              />
+              <button type="submit" className="blue-btn">
+                Spara
+              </button>
+            </form>
+          )}
+        </div>
+);
+      
 };
 
 export default EditProduct;

@@ -24,6 +24,7 @@ const AddNewProduct = () => {
                 description: description, 
                 price: Number(price),
                 imageUrl: imageUrl,
+                isBestseller: false,
             }
 
             const { error } = productSchema.validate(productObject, { abortEarly: false });

@@ -40,9 +40,10 @@ const editProduct = async (productId, updatedProduct, setProducts) => {
   const productRef = doc(db, "products", productId); // Referens till dokumentet
   
   try{
-    await updateDoc(productRef, {product: updatedProduct})
+    await updateDoc(productRef, updatedProduct)
     console.log("Dokument uppdaterat!")
-    setProducts(updatedProduct)
+    const updatedProductsList = await fetchProducts();
+    setProducts(updatedProductsList)
   } catch (e) {
     console.error("Fel vid uppdatering av dokument: ", e)
   }

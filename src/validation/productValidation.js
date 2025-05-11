@@ -18,6 +18,7 @@ const productSchema = Joi.object({
     'string.empty': 'Bildlänk är obligatorisk.',
     'string.uri': 'Bildlänk måste vara en giltig URL.',
   }),
+  isBestseller: Joi.boolean().optional(),
 });
 
 export default productSchema;
