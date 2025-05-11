@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../data/database.js';
-import { collection, getDocs } from 'firebase/firestore';
 import '../styles/Products.css';
 import SearchBox from '../components/SearchBox.jsx';
+import { fetchProducts} from '../data/crud.js'
 
 const Products = () => {
 
@@ -13,34 +12,21 @@ const Products = () => {
 
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const loadProducts = async () => {
       try {
-
         setLoading(true);
-        const productsCollectionRef = collection(db, 'products');
-        const querySnapshot = await getDocs(productsCollectionRef);
-        const productsList = querySnapshot.docs.map(doc => ({
-          id: doc.id, 
-          ...doc.data() 
-        }));
-        console.log(productsList)
-
+        const productsList = await fetchProducts();
         setProducts(productsList);
-        setFiltered(productsList)
+        setFiltered(productsList);
         setError(null);
-
       } catch (err) {
-
         console.error("Error fetching products: ", err);
-        setError("Failed to load products."); 
+        setError("Failed to load products.");
       } finally {
-
         setLoading(false);
       }
-    };
-
-    fetchProducts();
-
+    }
+    loadProducts()
   }, []);
 
 

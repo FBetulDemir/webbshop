@@ -8,6 +8,8 @@ import Products from './pages/Products.jsx'
 import Cart from './components/Cart.jsx'
 import AdminStartPage from './components/AdminStartPage.jsx';
 import AdminConsole from './components/AdminConsole.jsx';
+import AddNewProduct from './components/AddNewProduct.jsx';
+import EditProduct from './components/EditProduct.jsx';
 
 const router = createHashRouter(
   [
@@ -34,6 +36,14 @@ const router = createHashRouter(
         {
           path: '/components/adminConsole/',
           Component: AdminConsole,
+        },
+        {
+          path: '/components/addNewProduct/',
+          Component: AddNewProduct,
+        },
+        {
+          path: '/components/editProduct/:productId?',
+          Component: EditProduct,
         },
       ]
     }

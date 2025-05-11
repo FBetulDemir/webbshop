@@ -1,0 +1,23 @@
+.admin-console-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.admin-info{
+    margin-bottom: 2em;
+    h2{
+        font-size: 3em;
+    }
+    p{
+        font-size: 1.5em;
+    }
+}
+
+.buttons-div{
+    display:flex;
+    gap: 2em;
+}

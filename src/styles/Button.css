@@ -18,3 +18,8 @@
     flex-shrink: 0;
 }
 
+.blue-btn:hover{
+    background-color: #000000;
+    color: #15ECFB;
+    cursor: pointer;
+}

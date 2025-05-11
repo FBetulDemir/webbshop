@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc } from "firebase/firestore";
-import { db, app } from "../data/database.js";
+import { db } from "../data/database.js";
 import productSchema from '../validation/productValidation.js';
 
 
