@@ -1,4 +1,5 @@
 import { useCartStore } from "../store/cartStore.js";
+import "../styles/Cart.css";
 
 
 const Cart = () => {
@@ -12,7 +13,18 @@ const Cart = () => {
         addToCart({ ...item, quantity: (item.quantity || 1) + 1 });
     };
     const getTotalPrice = useCartStore((state) => state.getTotalPrice);
+    const calculateMoms = getTotalPrice() * 0.25;
 
+    let delivery = 0;
+    let totalWithDelivery = 0;
+
+    if (getTotalPrice()>300) {
+        delivery = 0;
+        totalWithDelivery = getTotalPrice() + delivery;
+    } else {
+        delivery = 49;
+        totalWithDelivery = getTotalPrice() + delivery;
+    }
 
     return(
         <div className="cart-wrapper">
@@ -23,22 +35,37 @@ const Cart = () => {
             ) : (
                 <ul className="cart-list">
                     {cart.map((item) => (
-                        <li key={item.id} className="cart-item" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-
+                        <li key={item.id} className="cart-item" >
                             <img src={item.imageUrl} alt="" style={{width:"90px", height:"auto"}}/>
-                            <h2>{item.name}</h2>
-                            <p>Price: {item.price} kr</p>
                             <div className="quantity-btn">
-                                <button onClick={() => increaseQuantity(item)}>+</button>
-                                {item.quantity || 1}
-                                <button onClick={() => removeFromCart(item)}>-</button>
+                                <button className="plus" onClick={() => increaseQuantity(item)}>+</button>
+                                <p>{item.quantity || 1}</p>
+                                
+                                <button className="minus" onClick={() => removeFromCart(item)}>-</button>
                             </div>
-                            <p>Totalt pris: {(item.quantity)*(item.price)}</p>
+                            <div className="product-details">
+                                <h2>{item.name}</h2>
+                                <p>Price: {item.price} kr</p>
+                                <p>Totalt pris: {(item.quantity)*(item.price)}</p>                                
+                            </div>
+
                         </li>
                     ))}
                     <div className="checkout">
                         <h2>Totalt pris att betala: {getTotalPrice()} kr</h2>
-                        <button className="blue-btn">Till kassan</button>
+                        <p>Varav moms: {calculateMoms}</p>
+                        
+                        <div className="checkout-details">
+                            <div className="subtotal">
+                                <p>Frakt (fri vid köp över 300kr):</p>
+                                <p>{delivery}</p>
+                            </div>
+                            <div className="subtotal">
+                                <p>Totalsumma:</p>
+                                <p>{totalWithDelivery}</p>
+                            </div>
+                        </div>
+                        <button className="blue-btn checkout-btn">Betala</button>
                     </div>
                 </ul>
                 

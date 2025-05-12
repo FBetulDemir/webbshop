@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1em 2em;
+    margin: 1em 3em;
 
     h1{
         color: #000;
@@ -40,6 +40,7 @@
     border-radius: 12px;
     background-color: rgba(21, 236, 251, 0.17);
     padding: 2em 1em;
+    min-width: 300px;
     button{
         justify-self: center;
         margin-top: 1em;
@@ -47,11 +48,12 @@
     }
 }
 
-@media (max-width: 480px) {
-    .product-item{
-        display: flex;
-        flex-direction: column;
-        
+@media (max-width: 990px) {
+    .products-wrapper ul{
+        display: grid;
+        grid-template-columns: 1fr;
+
     }
+
 }
   

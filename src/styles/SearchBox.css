@@ -1,0 +1,35 @@
+.search-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+}
+
+.search-input{
+    width: 50em;
+    padding: 1em;
+    /* border-radius: 12px; */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.search-icon{
+    width: 3em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0C8C95;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.search-content{
+    display: flex;
+}
+
+@media (max-width: 990px) {
+    .search-content input{
+        width: 100%;
+    }
+
+}

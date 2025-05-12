@@ -62,7 +62,7 @@ const Products = () => {
         setFiltered={setFiltered}
         filtered={filtered}
       />
-      <ul>
+      <ul className='products-list'>
         {(filtered.length > 0 ? filtered : products).map(product => (
           <li key={product.id} className='product-item'>
             {product.imageUrl && (
