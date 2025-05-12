@@ -1,8 +1,14 @@
 import { NavLink } from "react-router";
 import '../styles/Header.css';
 import cartImage from '../assets/cart.png';
+import { useCartStore } from "../store/cartStore.js";
 
 const Header = () => {
+    const cart = useCartStore((state) => state.cartItems);
+    // const totalItems = cart.length;
+    const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+
   return (
     <header className="header-wrapper">
         <div className="logo-container">
@@ -34,6 +40,7 @@ const Header = () => {
             <NavLink to="/components/cart/:cartId?" className="navlink cart-icon">
                 <img src={cartImage} alt="Shopping cart icon" />
             </NavLink>
+            <span className="cart-count">{totalItems}</span>
         </div>
     </header>
     )

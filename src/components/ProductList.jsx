@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchProducts, deleteProduct } from "../data/crud.js";
 
-const ProductList = ({ onSelectProduct }) => {
+const ProductList = ({ setSelectedProduct }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,12 +35,14 @@ const ProductList = ({ onSelectProduct }) => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>Pris: {product.price} SEK</p>
-            <button className="blue-btn" onClick={() => onSelectProduct(product)}>
-              Redigera
-            </button>
-            <button className="blue-btn" onClick={() => deleteProduct(product.id, setProducts)}>
-              Ta bort
-            </button>
+            <div className="edit-delete-btn">
+                <button className="blue-btn" onClick={() => setSelectedProduct(product)}>
+                Redigera
+                </button>
+                <button className="blue-btn" onClick={() => deleteProduct(product.id, setProducts)}>
+                Ta bort
+                </button>
+            </div>
           </li>
         ))}
       </ul>

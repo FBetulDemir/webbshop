@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import { db } from "../data/database";
 import ProductList from "./ProductList";
 import { editProduct, fetchProducts } from "../data/crud.js";
 
@@ -43,7 +40,7 @@ const EditProduct = ({products, productId, productName}) => {
     return (
         <div className="edit-product-wrapper">
           <h2>Redigera Produkt</h2>
-          <ProductList onSelectProduct={setSelectedProduct} />
+          <ProductList setSelectedProduct={setSelectedProduct} />
       
           {selectedProduct && (
             <form onSubmit={handleSave}>

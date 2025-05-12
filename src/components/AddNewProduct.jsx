@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { collection, doc, getDocs, addDoc, deleteDoc, updateDoc } from "firebase/firestore";
-import { db } from "../data/database.js";
 import productSchema from '../validation/productValidation.js';
-import { addProduct } from '../data/crud.js';
+import { addProduct, fetchProducts } from '../data/crud.js';
 
 
 
@@ -35,6 +33,14 @@ const AddNewProduct = () => {
             setError(message)
             return;
         }
+
+        fetchProducts()
+        setProductName('');
+        setDescription('');
+        setPrice('');
+        setImageUrl('');
+        setError('');
+        setSuccess('Produkten har lagts till!');
     }
 
     return(
