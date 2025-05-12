@@ -23,18 +23,26 @@ const Cart = () => {
             ) : (
                 <ul className="cart-list">
                     {cart.map((item) => (
-                        <li key={item.id} className="cart-item">
+                        <li key={item.id} className="cart-item" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+
+                            <img src={item.imageUrl} alt="" style={{width:"90px", height:"auto"}}/>
                             <h2>{item.name}</h2>
                             <p>Price: {item.price} kr</p>
-                            <button onClick={() => increaseQuantity(item)}>+</button>
-                            {item.quantity || 1}
-                            <button onClick={() => removeFromCart(item)}>-</button>
-                            <p>Totalt pris: {getTotalPrice}</p>
+                            <div className="quantity-btn">
+                                <button onClick={() => increaseQuantity(item)}>+</button>
+                                {item.quantity || 1}
+                                <button onClick={() => removeFromCart(item)}>-</button>
+                            </div>
+                            <p>Totalt pris: {(item.quantity)*(item.price)}</p>
                         </li>
                     ))}
+                    <div className="checkout">
+                        <h2>Totalt pris att betala: {getTotalPrice()} kr</h2>
+                        <button className="blue-btn">Till kassan</button>
+                    </div>
                 </ul>
+                
             )}
-            
         </div>
     )
 }

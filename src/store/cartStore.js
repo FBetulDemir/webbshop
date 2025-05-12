@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 const useCartStore = create((set) => ({
     cartItems: [],
+
     addToCart: (newItem) => {
         set((state) => {
             const existingItem = state.cartItems.find((item) => item.id === newItem.id);
@@ -34,8 +35,8 @@ const useCartStore = create((set) => ({
     },
     clearCart: () => set({ cartItems: [] }),
     // getTotalItems: () => set((state) => state.cartItems.length),
-    getTotalPrice: () => set((state) => state.cartItems.reduce((total, item) => total + item.price, 0)),
-    getTotalItems: (state) => state.cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0),
+    getTotalPrice: () => useCartStore.getState().cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0),
+    getTotalItems: () => useCartStore.getState().cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0),
       
 }));
 
