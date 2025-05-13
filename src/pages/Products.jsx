@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox.jsx';
 import { fetchProducts} from '../data/crud.js'
 import cartImage from '../assets/cart.png';
 import { useCartStore } from "../store/cartStore.js";
+import SortingProducts from '../components/SortingProducts.jsx';
 
 const Products = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -17,9 +18,11 @@ const Products = () => {
   const [error, setError] = useState(null);
   const [filtered, setFiltered] = useState([]);
 
-  console.log(cart);
-  console.log(cart[0]);
-  console.log(getTotalItems)
+  // console.log(cart);
+  // console.log(cart[0]);
+  // console.log(getTotalItems)
+
+  console.log(products)
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -57,11 +60,16 @@ const Products = () => {
     <div className='products-wrapper'>
       <h1>Sommarleksaker</h1>
       <p>Välkommen till LekSol – din sommarbutik online! Här hittar du ett brett utbud av roliga, färgglada leksaker för både små och stora barn. Perfekt för soliga dagar, strandbus och vattenlek!</p>
+      <SortingProducts
+        products= {filtered}
+        setProducts={setFiltered}
+      />
       <SearchBox 
         products= {products}
         setFiltered={setFiltered}
         filtered={filtered}
       />
+
       <ul className='products-list'>
         {(filtered.length > 0 ? filtered : products).map(product => (
           <li key={product.id} className='product-item'>
