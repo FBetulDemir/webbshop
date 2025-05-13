@@ -1,0 +1,28 @@
+.edit-product-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    list-style: none;
+}
+
+.edit-product-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 50%;
+    padding: 1em 2em;
+    border-radius: 12px;
+    background-color: rgba(21, 236, 251, 0.17);
+    margin: 2em 3em;
+    input{
+        width: 90%;
+        padding: 1em 0.7em;
+        border-radius: 5px;
+    }
+    label{
+        align-self: flex-start;
+    }
+}

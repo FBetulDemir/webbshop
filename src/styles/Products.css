@@ -26,6 +26,9 @@
         text-align: center;
         gap: 2em;
     }
+    button{
+        margin-top: auto;
+    }
 }
 
 .product-image{

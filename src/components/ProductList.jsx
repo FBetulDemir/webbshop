@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { fetchProducts, deleteProduct } from "../data/crud.js";
+import '../styles/ProductList.css';
 
-const ProductList = ({ setSelectedProduct }) => {
+const ProductList = ({ setSelectedProduct, setVisible, visible, reload}) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -21,27 +23,33 @@ const ProductList = ({ setSelectedProduct }) => {
     };
 
     loadProducts();
-  }, []);
+  }, [reload]);
+
+  const handleEditclick = (product) => {
+    setSelectedProduct(product);
+    setVisible("none");
+
+  };
 
   if (loading) return <div>Loading products...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="product-list-wrapper">
-      <h4>Välj en produkt att redigera:</h4>
+    <div className="product-list-wrapper" style={{ display: visible }}>
+      <h4>Välj en produkt att redigera</h4>
       <ul>
         {products.map((product) => (
-          <li key={product.id} className="product-item">
+          <li key={product.id} className="product-item-list">
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>Pris: {product.price} SEK</p>
             <div className="edit-delete-btn">
-                <button className="blue-btn" onClick={() => setSelectedProduct(product)}>
+              <button className="edit-btn" onClick={() => handleEditclick(product)}>
                 Redigera
-                </button>
-                <button className="blue-btn" onClick={() => deleteProduct(product.id, setProducts)}>
+              </button>
+              <button className="edit-btn" onClick={() => deleteProduct(product.id, setProducts)}>
                 Ta bort
-                </button>
+              </button>
             </div>
           </li>
         ))}
