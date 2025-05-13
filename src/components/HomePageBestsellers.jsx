@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../data/database.js';
 import { collection, query, where, limit, getDocs } from 'firebase/firestore';
+import '../styles/HomePageBestseller.css';
+import { useCartStore } from "../store/cartStore.js";
 
 const HomePageBestsellers = () => {
  
   const [bestsellers, setBestsellers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const addToCart = useCartStore((state) => state.addToCart);
 
   useEffect(() => {
     const fetchBestsellers = async () => {
@@ -59,16 +61,17 @@ const HomePageBestsellers = () => {
 
 
   return (
-    <section>
+    <section className='bestsellers-section'>
       <h2>Bestsellers</h2>
       <ul>
         {bestsellers.map(product => (
-          <li key={product.id}>
+          <li key={product.id} className='product-item'>
             {product.imageUrl && (
-              <img src={product.imageUrl} alt={product.name} style={{ width: '80px', height: 'auto' }} />
+              <img src={product.imageUrl} alt={product.name} className='product-image'/>
             )}
             <h3>{product.name}</h3>
             <p>Price: ${product.price}</p>
+            <button onClick={() => addToCart(product)} className='blue-btn'>Lägg till i varukorg</button>
 
           </li>
         ))}
