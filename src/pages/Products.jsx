@@ -7,9 +7,9 @@ import { useCartStore } from "../store/cartStore.js";
 import SortingProducts from '../components/SortingProducts.jsx';
 
 const Products = () => {
-  const cart = useCartStore((state) => state.cartItems);
+  // const cart = useCartStore((state) => state.cartItems);
   const addToCart = useCartStore((state) => state.addToCart);
-  const getTotalItems = useCartStore((state) => state.getTotalItems);
+  // const getTotalItems = useCartStore((state) => state.getTotalItems);
 
 
 
@@ -78,7 +78,7 @@ const Products = () => {
             )}
             <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <p>Price: {product.price} SEK</p>
+            <p>Pris: {product.price} SEK</p>
             <button className='blue-btn' onClick={() => addToCart(product)}>Lägg till <img src={cartImage} alt="cart icon" style={{width:"1.4em"}} /> </button>
           </li>
         ))}

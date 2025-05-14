@@ -56,13 +56,13 @@ const HomePageBestsellers = () => {
   }
 
   if (bestsellers.length === 0) {
-    return <div>No bestsellers available at the moment.</div>;
+    return <div>Inga bästsäljare just nu.</div>;
   }
 
 
   return (
     <section className='bestsellers-section'>
-      <h2>Bestsellers</h2>
+      <h2>Bästsäljare</h2>
       <ul>
         {bestsellers.map(product => (
           <li key={product.id} className='product-item'>
@@ -70,7 +70,7 @@ const HomePageBestsellers = () => {
               <img src={product.imageUrl} alt={product.name} className='product-image'/>
             )}
             <h3>{product.name}</h3>
-            <p>Price: {product.price} SEK</p>
+            <p>Pris: {product.price} SEK</p>
             <button onClick={() => addToCart(product)} className='blue-btn'>Lägg till i varukorg</button>
 
           </li>

@@ -33,7 +33,7 @@ const useCartStore = create((set) => ({
             ).filter(item => item !== null),
         }));
     },
-    clearCart: () => set({ cartItems: [] }),
+    // clearCart: () => set({ cartItems: [] }),
     // getTotalItems: () => set((state) => state.cartItems.length),
     getTotalPrice: () => useCartStore.getState().cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0),
     getTotalItems: () => useCartStore.getState().cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0),

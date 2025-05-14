@@ -21,4 +21,6 @@ const productSchema = Joi.object({
   isBestseller: Joi.boolean().optional(),
 });
 
+
+
 export default productSchema;
