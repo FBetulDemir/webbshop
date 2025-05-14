@@ -25,20 +25,16 @@ const deleteProduct = async(productId, setProducts) => {
   try {
     await deleteDoc(productRef)
     console.log("Dokument borttaget!")
+    const updatedProductsList = await fetchProducts();
+    setProducts(updatedProductsList)
   } catch (e) {
     console.error("Fel vid borttagning av dokument: ", e)
-  }
-  fetchProducts(setProducts)
-    
+  }  
 }
 
 const addProduct = async (productObject) => {
           try {
               const productsCollection = collection(db, 'products'); 
-      
-  
-
-  
               const newProductRef = await addDoc(productsCollection, productObject);
               const generatedId = newProductRef.id;
               console.log('Product added with ID:', generatedId);
