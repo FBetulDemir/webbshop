@@ -46,23 +46,26 @@ const Slider = () => {
 
     return (
         <div className="slider-wrapper">
-            <button className="arrow left" onClick={prev}>←</button>
+            
             {SliderImages.map((image, index) => (
                 <div 
                     key={index} 
                     className={`slider-image ${index === currentIndex ? "active" : "hidden"}`}
+                    style={{ backgroundImage: `url(${image.imgPath})`,   backgroundosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
                 >
-                    <img src={image.imgPath} alt={image.label} className="slider-img" />
+                    {/* <img src={image.imgPath} alt={image.label} className="slider-img" /> */}
+                    <button className="arrow left" onClick={prev}>←</button>
                     <div className="slider-text">
                         <h2>{image.text}</h2>
                         <p>{image.subtext}</p>
                         <NavLink to="/pages/products/:productId?" className="slider-button blue-btn">Se hela utbudet</NavLink>
                     </div>
+                    <button className="arrow right" onClick={next}>→</button>
                 </div>
 
             ))}
                 
-            <button className="arrow right" onClick={next}>→</button>
+            
 
         </div>
     )
