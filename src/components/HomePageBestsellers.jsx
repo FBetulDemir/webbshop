@@ -70,7 +70,7 @@ const HomePageBestsellers = () => {
               <img src={product.imageUrl} alt={product.name} className='product-image'/>
             )}
             <h3>{product.name}</h3>
-            <p>Price: ${product.price}</p>
+            <p>Price: {product.price} SEK</p>
             <button onClick={() => addToCart(product)} className='blue-btn'>Lägg till i varukorg</button>
 
           </li>

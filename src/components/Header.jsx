@@ -22,11 +22,11 @@ const Header = () => {
                     <NavLink to="/pages/products/:productId?" className="nav-link">Produkter</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/" className="nav-link">Om oss</NavLink>
+                    <NavLink to="/pages/about/" className="nav-link">Om oss</NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <NavLink to="/" className="nav-link">Kontakta oss</NavLink>
-                </li>
+                </li> */}
             </ul>
             {/* <ul className="shopping-cart">
                 <li className="cart-icon-wrapper">

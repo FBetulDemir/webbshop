@@ -1,3 +1,5 @@
+import "../styles/SortingProducts.css";
+
 const SortingProducts = ({ products, setProducts }) => {
     const sortByName = () => {
         const sorted = [...products].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
@@ -14,7 +16,7 @@ const SortingProducts = ({ products, setProducts }) => {
         setProducts(sorted);
     };
     return (
-        <section>
+        <section className="sorting-products">
             <h4>Sortera produkter genom att klicka på knappar nedan</h4>
             <div className="sorting-buttons">
                 <button className="blue-btn" onClick={sortByName}>Namn A-Ö</button>

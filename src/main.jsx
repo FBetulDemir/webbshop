@@ -10,6 +10,7 @@ import AdminStartPage from './components/AdminStartPage.jsx';
 import AdminConsole from './components/AdminConsole.jsx';
 import AddNewProduct from './components/AddNewProduct.jsx';
 import EditProduct from './components/EditProduct.jsx';
+import About from './pages/About.jsx'
 
 const router = createHashRouter(
   [
@@ -44,6 +45,10 @@ const router = createHashRouter(
         {
           path: '/components/editProduct/:productId?',
           Component: EditProduct,
+        },
+        {
+          path: '/pages/about/',
+          Component: About,
         },
       ]
     }

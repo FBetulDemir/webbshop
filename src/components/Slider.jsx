@@ -4,6 +4,7 @@ import SecondImg from "../assets/slider-images/slider2.jpg";
 import ThirdImg from "../assets/slider-images/slider3.jpg";
 import FourthImg from "../assets/slider-images/slider4.jpg";
 import "../styles/Slider.css";
+import { NavLink } from "react-router";
 
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,7 +56,7 @@ const Slider = () => {
                     <div className="slider-text">
                         <h2>{image.text}</h2>
                         <p>{image.subtext}</p>
-                        <button className="slider-button blue-btn">Se hela utbudet</button>
+                        <NavLink to="/pages/products/:productId?" className="slider-button blue-btn">Se hela utbudet</NavLink>
                     </div>
                 </div>
 

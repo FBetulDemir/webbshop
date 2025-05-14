@@ -4,6 +4,7 @@
     justify-content: center;
     text-align: center;
     margin: 1em 3em;
+    min-width: 350px;
     ul{
         list-style-type: none;
         display: grid;
@@ -27,25 +28,26 @@
     gap: 2em;
     display: flex;
     flex-direction: column;
-    .edit-btn{
-        margin-top: 1em;
-        color: #000;
-        background-color: #15ECFB;
-        border: 5px solid #000000;
-        border-radius: 12px;
-        padding: 1em 1.5em;
-        text-align: center;
-        font-family: Poppins;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        width: 250px;
-        height: 71px;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-    }
+
+}
+.edit-btn{
+    margin-top: 1em;
+    color: #000;
+    background-color: #15ECFB;
+    border: 5px solid #000000;
+    border-radius: 12px;
+    padding: 1em 1.5em;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 250px;
+    height: 71px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .edit-btn:hover{
@@ -56,5 +58,33 @@
 
 .edit-delete-btn{
     margin-top: auto;
+
+}
+
+
+@media (max-width: 990px) {
+    .product-list-wrapper ul{
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+
+    .edit-delete-btn{
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+    }
+
+
+}
+
+@media (max-width: 680px) {
+
+    .edit-delete-btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 
 }

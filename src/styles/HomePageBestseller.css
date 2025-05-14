@@ -34,3 +34,13 @@
         display: block;
     }
 }
+
+@media (max-width: 1024px) {
+    .bestsellers-section{
+        ul{
+            display: grid;
+        grid-template-columns: 1fr;
+        }
+    }
+    
+}
