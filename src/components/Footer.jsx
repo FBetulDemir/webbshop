@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import "../styles/Footer.css";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
     return (
@@ -7,12 +8,12 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-left">
                     <NavLink to="/" className="logo">
-                        LekSol
+                        <img src={logo} alt="" style={{}} />
                     </NavLink>
                 </div>
                 <div className="footer-middle">
                     <h4 style={{textDecoration: "underline"}}>Kundtjänst</h4>
-                    <p>E-post: support@leksol.se</p>
+                    <p>E-post: support@toylandia.se</p>
                     <p>Öppettider: Måndag–Fredag, 09.00–17.00</p>
 
                 </div>

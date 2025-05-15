@@ -5,7 +5,7 @@ const About = () => {
     <div className="about-wrapper">
       <h1>Om Oss</h1>
       <p>
-        Välkommen till <strong>LekSol</strong> – din sommarbutik online! 
+        Välkommen till <strong>ToyLandia</strong> – din sommarbutik online! 
         Vi älskar sol, skratt och lek. Därför har vi skapat en plats där du hittar färgglada, roliga 
         och säkra leksaker som gör sommaren extra minnesvärd för barn i alla åldrar.
       </p>

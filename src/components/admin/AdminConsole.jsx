@@ -1,4 +1,4 @@
-import '../styles/AdminConsole.css';
+import '../../styles/AdminConsole.css';
 import { NavLink } from 'react-router';
 
 const AdminConsole = () => {

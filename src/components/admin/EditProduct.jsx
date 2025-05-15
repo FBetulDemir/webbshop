@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ProductList from "./ProductList";
-import { editProduct, fetchProducts } from "../data/crud.js";
-import '../styles/EditProduct.css';
-import productSchema from '../validation/productValidation.js';
+import ProductList from "../ProductList.jsx";
+import { editProduct, fetchProducts } from "../../data/crud.js";
+import '../../styles/EditProduct.css';
+import productSchema from '../../validation/productValidation.js';
 
 const EditProduct = () => {
 

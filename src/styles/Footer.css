@@ -6,6 +6,7 @@ footer{
 .footer-content{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #FFF;
     font-family: Poppins;
     font-size: 16px;
@@ -17,21 +18,25 @@ footer{
 }
 
 .footer-left{
-    color: #FFFF50;
+    width: 30%;
+    img{
+        width: 100%;
+    }
+    /* color: #FFFF50;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     font-family: "Jacques Francois Shadow";
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: normal; */
 }
 
 .footer-middle{
     padding: 3em 0;
     color: #FFF;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 1.5;
@@ -43,7 +48,7 @@ footer{
     margin-right: 3em;
     color: #FFF;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

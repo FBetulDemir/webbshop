@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import '../styles/Header.css';
 import cartImage from '../assets/cart.png';
 import { useCartStore } from "../store/cartStore.js";
+import logo from "../assets/logo.png";
 
 const Header = () => {
     const cart = useCartStore((state) => state.cartItems);
@@ -13,7 +14,7 @@ const Header = () => {
     <header className="header-wrapper">
         <div className="logo-container">
           <NavLink to="/" className="logo">
-            LekSol
+            <img src={logo} alt="" style={{}} />
           </NavLink>
         </div>
         <nav className="nav-wrapper">

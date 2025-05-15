@@ -6,10 +6,10 @@ import { createHashRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home.jsx'
 import Products from './pages/Products.jsx'
 import Cart from './components/Cart.jsx'
-import AdminStartPage from './components/AdminStartPage.jsx';
-import AdminConsole from './components/AdminConsole.jsx';
-import AddNewProduct from './components/AddNewProduct.jsx';
-import EditProduct from './components/EditProduct.jsx';
+import AdminStartPage from './components/admin/AdminStartPage.jsx';
+import AdminConsole from './components/admin/AdminConsole.jsx';
+import AddNewProduct from './components/admin/AddNewProduct.jsx';
+import EditProduct from './components/admin/EditProduct.jsx';
 import About from './pages/About.jsx'
 
 const router = createHashRouter(

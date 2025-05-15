@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router';
-import '../styles/AdminStartPage.css';
+import '../../styles/AdminStartPage.css';
 
 const AdminStartPage = () => {
     const [userNameInput, setUserNameInput] = useState('');

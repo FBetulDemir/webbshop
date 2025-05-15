@@ -29,7 +29,6 @@ const Cart = () => {
     return(
         <div className="cart-wrapper">
             <h1>Din varukorg</h1>
-            <p>Här kan du se dina valda produkter.</p>
             {cart.length === 0 ? (
                 <p>Din varukorg är tom.</p>
             ) : (
@@ -38,14 +37,14 @@ const Cart = () => {
                         <li key={item.id} className="cart-item" >
                             <img src={item.imageUrl} alt="" style={{width:"90px", height:"auto"}}/>
                             <div className="quantity-btn">
-                                <button className="plus" onClick={() => increaseQuantity(item)}>+</button>
+                                <button className="plus" onClick={() => removeFromCart(item)}>-</button>
                                 <p>{item.quantity || 1}</p>
                                 
-                                <button className="minus" onClick={() => removeFromCart(item)}>-</button>
+                                <button className="minus" onClick={() => increaseQuantity(item)}>+</button>
                             </div>
                             <div className="product-details">
                                 <h2>{item.name}</h2>
-                                <p>Price: {item.price} kr</p>
+                                <p>Pris: {item.price} kr</p>
                                 <p>Totalt pris: {(item.quantity)*(item.price)}</p>                                
                             </div>
 
@@ -65,7 +64,7 @@ const Cart = () => {
                                 <p>{totalWithDelivery}</p>
                             </div>
                         </div>
-                        <button className="blue-btn checkout-btn">Betala</button>
+                        <button className="blue-btn checkout-btn" style={{alignSelf:"center"}}>Betala</button>
                     </div>
                 </ul>
                 

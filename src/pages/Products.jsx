@@ -59,7 +59,7 @@ const Products = () => {
   return (
     <div className='products-wrapper'>
       <h1>Sommarleksaker</h1>
-      <p>Välkommen till LekSol – din sommarbutik online! Här hittar du ett brett utbud av roliga, färgglada leksaker för både små och stora barn. Perfekt för soliga dagar, strandbus och vattenlek!</p>
+      <p>Välkommen till ToyLandia – din sommarbutik online! Här hittar du ett brett utbud av roliga, färgglada leksaker för både små och stora barn. Perfekt för soliga dagar, strandbus och vattenlek!</p>
       <SortingProducts
         products= {filtered}
         setProducts={setFiltered}

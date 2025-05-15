@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import productSchema from '../validation/productValidation.js';
-import { addProduct, fetchProducts } from '../data/crud.js';
-import '../styles/AddNewProduct.css';
+import productSchema from '../../validation/productValidation.js';
+import { addProduct, fetchProducts } from '../../data/crud.js';
+import '../../styles/AddNewProduct.css';
 
 
 
