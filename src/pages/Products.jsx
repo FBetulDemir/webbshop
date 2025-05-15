@@ -22,7 +22,7 @@ const Products = () => {
   // console.log(cart[0]);
   // console.log(getTotalItems)
 
-  console.log(products)
+  // console.log(products)
 
   useEffect(() => {
     const loadProducts = async () => {
