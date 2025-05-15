@@ -1,8 +1,9 @@
 {
-  "name": "webbshop_sommarleksaker",
+  "name": "webbshop",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://fbetuldemir.github.io/webbshop",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
