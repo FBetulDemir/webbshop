@@ -44,24 +44,24 @@ const Cart = () => {
                             </div>
                             <div className="product-details">
                                 <h2>{item.name}</h2>
-                                <p>Pris: {item.price} kr</p>
-                                <p>Totalt pris: {(item.quantity)*(item.price)}</p>                                
+                                <p>Pris: {item.price} Sek</p>
+                                <p>Totalt pris: {(item.quantity)*(item.price)} Sek</p>                                
                             </div>
 
                         </li>
                     ))}
                     <div className="checkout">
-                        <h2>Totalt pris att betala: {getTotalPrice()} kr</h2>
-                        <p>Varav moms: {calculateMoms}</p>
+                        <h2>Totalt pris att betala: {getTotalPrice()} Sek</h2>
+                        <p>Varav moms: {calculateMoms} Sek</p>
                         
                         <div className="checkout-details">
                             <div className="subtotal">
                                 <p>Frakt (fri vid köp över 300kr):</p>
-                                <p>{delivery}</p>
+                                <p>{delivery} Sek</p>
                             </div>
                             <div className="subtotal">
                                 <p>Totalsumma:</p>
-                                <p>{totalWithDelivery}</p>
+                                <p>{totalWithDelivery} Sek</p>
                             </div>
                         </div>
                         <button className="blue-btn checkout-btn" style={{alignSelf:"center"}}>Betala</button>
