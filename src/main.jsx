@@ -23,11 +23,11 @@ const router = createHashRouter(
           Component: Home
         },
         {
-          path: '/pages/products/:productId?',
+          path: '/pages/products/',
           Component: Products,
         },
         {
-          path: '/components/cart/:cartId',
+          path: '/components/cart/',
           Component: Cart,
         },
         {
