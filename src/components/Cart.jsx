@@ -5,7 +5,7 @@ import "../styles/Cart.css";
 const Cart = () => {
 
     const cart = useCartStore((state) => state.cartItems);
-    console.log(cart);
+    // console.log(cart);
 
     const addToCart = useCartStore((state) => state.addToCart);
     const removeFromCart = useCartStore((state) => state.removeFromCart);
@@ -44,24 +44,24 @@ const Cart = () => {
                             </div>
                             <div className="product-details">
                                 <h2>{item.name}</h2>
-                                <p>Pris: {item.price} Sek</p>
-                                <p>Totalt pris: {(item.quantity)*(item.price)} Sek</p>                                
+                                <p>Pris: {item.price} SEK</p>
+                                <p>Totalt pris: {(item.quantity)*(item.price)} SEK</p>                                
                             </div>
 
                         </li>
                     ))}
                     <div className="checkout">
-                        <h2>Totalt pris att betala: {getTotalPrice()} Sek</h2>
-                        <p>Varav moms: {calculateMoms} Sek</p>
+                        <h2>Totalt pris att betala: {getTotalPrice()} SEK</h2>
+                        <p>Varav moms: {calculateMoms} SEK</p>
                         
                         <div className="checkout-details">
                             <div className="subtotal">
                                 <p>Frakt (fri vid köp över 300kr):</p>
-                                <p>{delivery} Sek</p>
+                                <p>{delivery} SEK</p>
                             </div>
                             <div className="subtotal">
                                 <p>Totalsumma:</p>
-                                <p>{totalWithDelivery} Sek</p>
+                                <p>{totalWithDelivery} SEK</p>
                             </div>
                         </div>
                         <button className="blue-btn checkout-btn" style={{alignSelf:"center"}}>Betala</button>

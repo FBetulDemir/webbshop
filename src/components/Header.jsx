@@ -20,7 +20,7 @@ const Header = () => {
         <nav className="nav-wrapper">
             <ul className="nav-list">
                 <li className="nav-item">
-                    <NavLink to="/pages/products/:productId?" className="nav-link">Produkter</NavLink>
+                    <NavLink to="/pages/products/" className="nav-link">Produkter</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink to="/pages/about/" className="nav-link">Om oss</NavLink>
@@ -38,7 +38,7 @@ const Header = () => {
             </ul> */}
         </nav>
         <div className="shopping-cart">
-            <NavLink to="/components/cart/:cartId?" className="navlink cart-icon">
+            <NavLink to="/components/cart/" className="navlink cart-icon">
                 <img src={cartImage} alt="Shopping cart icon" />
             </NavLink>
             <span className="cart-count">{totalItems}</span>

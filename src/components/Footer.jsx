@@ -21,7 +21,7 @@ const Footer = () => {
                     <h4 style={{textDecoration: "underline"}}>Snabblänkar</h4>
                     <ul>
                         <li><NavLink to="/" className="footer-links">Hem</NavLink></li>
-                        <li><NavLink to="/pages/products/:productId?" className="footer-links">Produkter</NavLink></li>
+                        <li><NavLink to="/pages/products/" className="footer-links">Produkter</NavLink></li>
                         <li><NavLink to="/pages/about/" className="footer-links">Om oss</NavLink></li>
                         <li><NavLink to="/components/adminStartPage/" className="footer-links">Admin Login</NavLink></li>
                     </ul>
