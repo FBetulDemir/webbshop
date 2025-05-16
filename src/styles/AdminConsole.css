@@ -21,3 +21,18 @@
     display:flex;
     gap: 2em;
 }
+
+
+@media (max-width: 768px) {
+    .buttons-div {
+        flex-direction: column;
+    }
+    .admin-info{
+        h2{
+            font-size: 2em;
+        }
+        p{
+            font-size: 1.2em;
+        }
+    }
+}

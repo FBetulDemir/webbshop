@@ -15,11 +15,20 @@
     height: 71px;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
+    flex-shrink: 1;
 }
 
 .blue-btn:hover{
     background-color: #000000;
     color: #15ECFB;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .blue-btn{
+        font-size: 18px;
+        padding: 0.5em 1em;
+        width: 200px;
+        height: 60px;
+    }
 }

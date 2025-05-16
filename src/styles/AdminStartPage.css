@@ -28,3 +28,9 @@
 .admin-start label{
     padding: 0.3em 0.5em;
 }
+
+@media (max-width: 768px) {
+    .admin-start{
+      width: 90%;
+    }
+}

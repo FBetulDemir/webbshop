@@ -4,7 +4,7 @@
     justify-content: center;
     text-align: center;
     margin: 1em 3em;
-    min-width: 350px;
+
     ul{
         list-style-type: none;
         display: grid;
@@ -62,7 +62,7 @@
 }
 
 
-@media (max-width: 990px) {
+@media (max-width: 1024px) {
     .product-list-wrapper ul{
         display: grid;
         grid-template-columns: 1fr;
@@ -78,7 +78,7 @@
 
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
 
     .edit-delete-btn{
         display: flex;
