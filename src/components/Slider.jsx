@@ -58,7 +58,7 @@ const Slider = () => {
                     <div className="slider-text">
                         <h2>{image.text}</h2>
                         <p>{image.subtext}</p>
-                        <NavLink to="/pages/products/:productId?" className="slider-button blue-btn">Se hela utbudet</NavLink>
+                        <NavLink to="/pages/products/" className="slider-button blue-btn">Se hela utbudet</NavLink>
                     </div>
                     <button className="arrow right" onClick={next}>→</button>
                 </div>
