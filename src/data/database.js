@@ -19,10 +19,4 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Now 'db' is your reference to the Firestore database service!
-// You can now use 'db' to interact with your Firestore data.
-// For example: db.collection('your-collection').get().then(...)
-
-// You might want to export 'app', 'analytics', and 'db'
-// so other parts of your application can use them.
 export { app, analytics, db };

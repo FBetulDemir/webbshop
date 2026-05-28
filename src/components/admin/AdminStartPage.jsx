@@ -12,17 +12,6 @@ const AdminStartPage = () => {
     const username = "admin";
     const password = "password";
 
-    // const handleLogin = () => {
-
-    //     userNameInput === username && passwordInput === password ? setIsLoggedIn(true) : setIsLoggedIn(false);
-    //     console.log(isLoggedIn)
-    //     if (isLoggedIn){
-    //         navigate("/")
-    //     } else {
-    //         console.log("fel lösenord eller användarnamn")
-    //     }  
-    // }
-
     const handleLogin = () => {
 
         if (userNameInput === username && passwordInput === password) {
@@ -32,7 +21,6 @@ const AdminStartPage = () => {
         } else {
             setLoginFailed(true);
             setIsLoggedIn(false);
-            console.log("fel lösenord eller användarnamn")
         }
     }
 

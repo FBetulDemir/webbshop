@@ -1,124 +1,110 @@
-footer{
-    background-color: #0C8C95;
-    padding: 1em 3em;
+footer {
+    background-color: var(--primary);
+    padding: 2.5em 3em 1.5em;
 }
 
-.footer-content{
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.8px;
-    
+    align-items: flex-start;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
-.footer-left{
-    width: 30%;
-    img{
-        width: 100%;
-    }
-    /* color: #FFFF50;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
-    font-family: "Jacques Francois Shadow";
-    font-size: 96px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal; */
-}
-
-.footer-middle{
-    padding: 3em 0;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: 0.8px;
-}
-
-.footer-right{
-    padding: 3em 0;
-    margin-right: 3em;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.8px;
-    ul {
-        list-style: none;
-
-
-    }
-
-}
-
-.footer-links{
-    color: #FFF;
-    text-decoration: none;
-    line-height: 1.5;
-    transition: all 0.3s ease-in-out;
-}
-.footer-links:hover{
-    color: #3f3f3b;
-    text-decoration: underline;
-}
-
-
-.underline{
-    width: 95%;
-    border-bottom: 1px solid #FFF;
-    margin: 3em 0;
+.footer-left {
+    width: 110px;
     display: flex;
-    align-self: center;
+    align-items: flex-start;
 }
-.payment-methods{
+
+.footer-left img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.footer-middle,
+.footer-right {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.65em;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    transition: color 0.18s ease;
+    display: block;
+    line-height: 1.9;
+}
+
+.footer-links:hover {
+    color: var(--accent);
+}
+
+.underline {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2em 0 1.5em;
+}
+
+.payment-methods {
     display: flex;
     flex-direction: column;
 }
 
-.svg-icons{
+.svg-icons {
     display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-bottom: 3em;
-}
-
-.card{
-    border-radius: 4px;
-    border: 1px solid var(--Grey, #D9D9D9);
-    background: #FFF;
-    width: 52.272px;
-    height: 34.776px;
-
-    text-align: center;
     justify-content: center;
     align-items: center;
+    gap: 0.75em;
+    padding-bottom: 0.5em;
+}
+
+.card {
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #fff;
+    width: 48px;
+    height: 32px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (max-width: 1024px){
-    .footer-content{
+@media (max-width: 1024px) {
+    .footer-content {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        gap: 1.75em;
+        align-items: flex-start;
     }
-    .footer-left{
-        font-size: 48px;
-    }
-    .footer-middle{
-        padding: 1em 0;
-    }
-    .footer-right{
-        margin-right: 0;
+
+    .footer-left {
+        width: 90px;
     }
 }
 
+@media (max-width: 480px) {
+    footer {
+        padding: 2em 1.5em 1em;
+    }
+}

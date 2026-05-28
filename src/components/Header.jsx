@@ -14,7 +14,7 @@ const Header = () => {
     <header className="header-wrapper">
         <div className="logo-container">
           <NavLink to="/" className="logo">
-            <img src={logo} alt="" style={{}} />
+            <img src={logo} alt="ToyLandia logo" />
           </NavLink>
         </div>
         <nav className="nav-wrapper">
@@ -29,13 +29,6 @@ const Header = () => {
                     <NavLink to="/" className="nav-link">Kontakta oss</NavLink>
                 </li> */}
             </ul>
-            {/* <ul className="shopping-cart">
-                <li className="cart-icon-wrapper">
-                    <NavLink to="components/cart/:cartId?" className="navlink cart-icon">
-                            <img src={cartImage} alt="Shopping cart icon" />
-                    </NavLink>
-                </li>
-            </ul> */}
         </nav>
         <div className="shopping-cart">
             <NavLink to="/components/cart/" className="navlink cart-icon">

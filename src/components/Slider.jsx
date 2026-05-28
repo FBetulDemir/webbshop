@@ -51,7 +51,7 @@ const Slider = () => {
                 <div 
                     key={index} 
                     className={`slider-image ${index === currentIndex ? "active" : "hidden"}`}
-                    style={{ backgroundImage: `url(${image.imgPath})`,   backgroundosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
+                    style={{ backgroundImage: `url(${image.imgPath})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
                 >
                     {/* <img src={image.imgPath} alt={image.label} className="slider-img" /> */}
                     <button className="arrow left" onClick={prev}>←</button>

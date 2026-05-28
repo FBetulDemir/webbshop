@@ -8,22 +8,21 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-left">
                     <NavLink to="/" className="logo">
-                        <img src={logo} alt="" style={{}} />
+                        <img src={logo} alt="ToyLandia logo" />
                     </NavLink>
                 </div>
                 <div className="footer-middle">
-                    <h4 style={{textDecoration: "underline"}}>Kundtjänst</h4>
+                    <h4>Kundtjänst</h4>
                     <p>E-post: support@toylandia.se</p>
                     <p>Öppettider: Måndag–Fredag, 09.00–17.00</p>
 
                 </div>
                 <div className="footer-right">
-                    <h4 style={{textDecoration: "underline"}}>Snabblänkar</h4>
+                    <h4>Snabblänkar</h4>
                     <ul>
                         <li><NavLink to="/" className="footer-links">Hem</NavLink></li>
                         <li><NavLink to="/pages/products/" className="footer-links">Produkter</NavLink></li>
                         <li><NavLink to="/pages/about/" className="footer-links">Om oss</NavLink></li>
-                        <li><NavLink to="/components/adminStartPage/" className="footer-links">Admin Login</NavLink></li>
                     </ul>
                 </div>
             </div>

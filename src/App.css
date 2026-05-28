@@ -1,11 +1,22 @@
-*{
+:root {
+  --primary: #0D4F6B;
+  --primary-light: #1A7DA0;
+  --accent: #F97316;
+  --accent-hover: #EA6C10;
+  --bg: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --text: #1E293B;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-body{
-  background-color: #FFFFF8;
-
+body {
+  background-color: var(--bg);
+  color: var(--text);
 }

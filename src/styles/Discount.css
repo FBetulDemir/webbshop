@@ -1,119 +1,119 @@
 .discounts-section {
     text-align: center;
+    padding: 1em 2em 3.5em;
 }
-  
+
+.discounts-section h2 {
+    color: var(--primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25em;
+}
+
 .discount-grid {
     display: flex;
-    gap: 1em;
+    gap: 1.25em;
     justify-content: center;
-    margin: 2em 0;
+    margin: 1.5em 0 0;
 }
-  
+
 .discount-card {
     position: relative;
     width: 40%;
     height: auto;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
-  
+
 .discount-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-  
+
 .discount-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 2em 1em;
+    padding: 2em 1.5em;
     color: white;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.18));
     display: flex;
     flex-direction: column;
-
 }
-  
+
 .discount-overlay.right {
     justify-content: flex-start;
     text-align: right;
-    padding: 2em 1em;
+    padding: 2em 1.5em;
 }
 
 .discount-overlay.left {
     justify-content: flex-start;
     text-align: left;
-    padding: 2em 1em;
-}
-  
-.discount-overlay h3 {
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-  
-  
-.discount-overlay p {
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    padding: 2em 1.5em;
 }
 
+.discount-overlay h3 {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.discount-overlay p {
+    color: rgba(255, 255, 255, 0.88);
+    font-family: Poppins;
+    font-size: 0.97rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 0.5em;
+}
 
 @media (max-width: 1024px) {
     .discount-card {
-      width: 45%;
+        width: 46%;
     }
-  
+
     .discount-overlay h3 {
-      font-size: 26px;
+        font-size: 1.25rem;
     }
-  
+
     .discount-overlay p {
-      font-size: 16px;
+        font-size: 0.9rem;
     }
 }
-  
+
 @media (max-width: 768px) {
     .discount-grid {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .discount-card {
-      width: 90%;
+        width: 90%;
     }
-  
+
     .discount-overlay {
-      padding: 1.5em 1em;
+        padding: 1.5em 1.25em;
     }
-  
+
     .discount-overlay h3 {
-      font-size: 22px;
-    }
-  
-    .discount-overlay p {
-      font-size: 15px;
+        font-size: 1.1rem;
     }
 }
-  
+
 @media (max-width: 480px) {
     .discount-overlay h3 {
-      font-size: 18px;
+        font-size: 1rem;
     }
-  
+
     .discount-overlay p {
-      font-size: 14px;
+        font-size: 0.85rem;
     }
 }
-  
