@@ -76,22 +76,6 @@
     flex-shrink: 0;
 }
 
-.quantity-btn button {
-    padding: 0.4em 0.8em;
-    border: none;
-    background-color: var(--bg-subtle);
-    font-size: 1.1rem;
-    color: var(--primary);
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.15s ease;
-    line-height: 1;
-}
-
-.quantity-btn button:hover {
-    background-color: var(--border);
-}
-
 .quantity-btn p {
     padding: 0.4em 0.9em;
     font-size: 1rem;
@@ -101,6 +85,44 @@
     border-right: 1px solid var(--border);
     min-width: 2.5em;
     text-align: center;
+}
+
+.qty-minus,
+.qty-plus {
+    padding: 0.4em 0.8em;
+    border: none;
+    background-color: var(--bg-subtle);
+    font-size: 1.1rem;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.15s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-minus:hover,
+.qty-plus:hover {
+    background-color: var(--border);
+}
+
+.qty-remove {
+    padding: 0.4em 0.8em;
+    border: none;
+    background-color: var(--bg-subtle);
+    color: #EF4444;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-remove:hover {
+    background-color: #FEE2E2;
 }
 
 .checkout {

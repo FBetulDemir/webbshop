@@ -1,10 +1,16 @@
 import imageRight from '../assets/discount-images/baby.jpg';
 import imageLeft from '../assets/discount-images/children.jpg';
 import '../styles/Discount.css';
+import useReveal from '../hooks/useReveal.js';
 
 const Discount = () => {
+    const [ref, visible] = useReveal();
+
     return (
-        <section className="discounts-section">
+        <section
+            ref={ref}
+            className={`discounts-section sr ${visible ? 'sr--in' : ''}`}
+        >
             <h2>Aktuella Kampanjer</h2>
             <div className="discount-grid">
                 <div className="discount-card">
@@ -22,8 +28,8 @@ const Discount = () => {
                     </div>
                 </div>
             </div>
-      </section>
-    )
-}
+        </section>
+    );
+};
 
 export default Discount;

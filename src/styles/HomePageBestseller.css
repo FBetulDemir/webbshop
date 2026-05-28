@@ -36,6 +36,7 @@
     border: 1px solid var(--border);
     width: 300px;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .bestsellers-section .product-item:hover {

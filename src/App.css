@@ -20,3 +20,55 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+/* ── Scroll reveal utilities ── */
+.sr {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sr.sr--in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sr-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sr-left.sr--in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sr-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sr-right.sr--in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Add-to-cart button feedback ── */
+@keyframes btnAddedPop {
+    0%   { transform: scale(1); }
+    45%  { transform: scale(0.93); }
+    100% { transform: scale(1); }
+}
+
+.blue-btn.btn-added {
+    background-color: #16A34A;
+    pointer-events: none;
+    animation: btnAddedPop 0.22s ease;
+}
+
+.blue-btn.btn-added:hover {
+    background-color: #16A34A;
+    transform: none;
+}
